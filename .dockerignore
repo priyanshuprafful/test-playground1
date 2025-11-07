@@ -1,10 +1,25 @@
+.git
 __pycache__/
 *.pyc
 *.pyo
-*.pyd
+*.log
 *.pem
 *.env
-.git
 .vscode
 .idea
-*.log
+
+
+
+
+
+
+# __pycache__/
+# *.pyc
+# *.pyo
+# *.pyd
+# *.pem
+# *.env
+# .git
+# .vscode
+# .idea
+# *.log
