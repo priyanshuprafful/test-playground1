@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  service-b:
+    build: ./service-b
+    container_name: service-b
+    ports:
+      - "5001:5001"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5001/health"]
+      interval: 10s
+      retries: 3
+
+  service-a:
+    build: ./service-a
+    container_name: service-a
+    ports:
+      - "5000:5000"
+    depends_on:
+      service-b:
+        condition: service_healthy
+    environment:
+      - LOG_LEVEL=info
